@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/blog?serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=CONVERT_TO_NULL&autoReconnect=true&useSSL=false&failOverReadOnly=false
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      #值为update修改实体类会更新表结构
+      ddl-auto: update
+    show-sql: false
+
+#日志级别
+logging:
+  level:
+    #自定义日志级别
+    root: info
+    com.wmy: debug
+    #指定日志文件路径
+  file:
+    name: log/blog-dev.log
+
+server: # web应用访问端口80,可直接通过域名访问
+  port: 8080
